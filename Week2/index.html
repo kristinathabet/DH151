@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello World</title>
+	<meta charset="utf-8" />
+
+	<!-- style sheets -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- leaflet -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+	<div class="header">
+		 Kristina's Favorite Places in the US
+	</div>
+	<div class="sidebar">
+		Places I Hope to Visit Soon:
+		<ul>
+            <li>Seattle, Washington</li>
+			<li style="font-size:14px; line-height: 1em; margin-left:2.5em">To frolic in the city while its pouring rain </li>
+            <li>Big Sur, California</li>
+            <li style="font-size:14px; line-height: 1em; margin-left:2.5em">To surf under the sunset and camp in my car with a friend </li>
+            <li>San Francisco, California </li>
+            <li style="font-size:14px; line-height: 1em; margin-left:2.5em">To visit the San Francisco Museum of Modern Art and the Museum of Craft and Design </li>
+            <li>Atlanta, Georgia</li>
+			<li style="font-size:14px; line-height: 1em; margin-left:2.5em">To dance to Hip Hop music in the clubs and network in the photography field </li>
+            <li>Portland, Oregon</li>
+            <li style="font-size:14px;line-height: 1em; margin-left:2.5em">To disconnect from technology and spend my days hiking and stretching </li>
+            <li>City of Key West, Florida</li>
+			<li style="font-size:14px; line-height: 1em; margin-left:2.5em">To kayak in the keys and see the beautiful reflection of the trees on the water </li>
+        
+          </ul>
+	</div>
+	<div class="content">
+		<div id="map"></div>
+	</div>
+
+	<script>
+
+alert('Welcome! Click on the Markers to find out why these places are my favorite locations in the US!')
+
+
+var locations = [
+  ["Raleigh: The best place to thrift clothes", 35.7796, -78.6382],
+  ["Brooklyn: You can feel the culture in the air", 40.6782, -73.9442],
+  ["Las Vegas: Best place to let loose with friends", 36.1699, -115.1398],
+  ["Manhattan: The city that never sleeps", 40.7831, -73.9712],
+  ["Los Angeles: Forever a place I will call home", 34.0522, -118.2437],
+  ["Dallas: Nothing is here but my family and that's enough", 32.7767, -96.7970]
+];
+
+var map = L.map('map').setView([32.7767, -96.7970], 4);
+mapLink =
+  '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+L.tileLayer(
+  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; ' + mapLink + ' Contributors',
+    maxZoom: 18,
+  }).addTo(map);
+
+for (var i = 0; i < locations.length; i++) {
+  marker = new L.marker([locations[i][1], locations[i][2]])
+    .bindPopup(locations[i][0])
+    .addTo(map);
+}
+
+				
+			
+
+
+
+			
+	</script>
+
+
+</body>
+</html>

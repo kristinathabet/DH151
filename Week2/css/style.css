@@ -1,0 +1,45 @@
+body,html {
+	margin:0;
+	height:100%;
+	width:100%;
+}
+
+#map {
+	height: 100%;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 80px 1fr;
+	grid-template-columns: 250px 1fr;
+	grid-template-areas: 
+	"header header"
+	"sidebar content";
+}
+
+.header {
+	grid-area: header;
+	padding:14px;
+	background-color: rgb(65, 102, 85);
+	color: white;
+	font-size: 2.5em;
+	text-align:center;
+	font-family: "Gill Sans", sans-serif;
+	
+}
+
+.sidebar {
+	grid-area: sidebar;
+	padding:10px;
+	background-color: rgb(17, 67, 52);
+	color: rgb(241, 239, 239);
+	font-size: 1.1em;
+	line-height: 2em;
+	font-weight: medium; 
+	font-family: "Gill Sans", sans-serif;
+	
+}
+
+.content {
+	grid-area: content;
+}
